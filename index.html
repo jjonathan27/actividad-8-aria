@@ -109,7 +109,8 @@
     input[type="text"]:focus,
     input[type="email"]:focus,
     textarea:focus,
-    input[type="submit"]:focus {
+    input[type="submit"]:focus,
+    button[type="submit"]:focus {
       border-color: #165b53;
       box-shadow: 0 0 5px rgba(22, 91, 83, 0.4);
       outline: 2px solid #165b53;
@@ -117,19 +118,22 @@
     }
 
     /* Submit button */
-    input[type="submit"] {
+    input[type="submit"],
+    button[type="submit"] {
       background-color: #165b53;
       color: #ffffff;
       border: none;
       border-radius: 6px;
       padding: 10px 20px;
       font-size: 1em;
+      font-family: inherit;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    input[type="submit"]:hover {
+    input[type="submit"]:hover,
+    button[type="submit"]:hover {
       background-color: #0f423c;
     }
 
@@ -157,7 +161,7 @@
   <main>
     <h2>ARIA exercise 1 (after)</h2>
 
-    <form action="#" method="post">
+    <form action="" method="get" onsubmit="event.preventDefault();">
       <fieldset>
         <legend>Contact us</legend>
 
@@ -185,7 +189,7 @@
           <textarea id="message" name="message" cols="30" rows="10"></textarea>
         </div>
 
-        <input type="submit" value="Send" />
+        <button type="submit" aria-label="Send">Send</button>
       </fieldset>
     </form>
 
